@@ -174,10 +174,10 @@
             </objects>
             <point key="canvasLocation" x="1572" y="-651"/>
         </scene>
-        <!--View Controller-->
+        <!--Signup View Controller-->
         <scene sceneID="TIq-PV-vIW">
             <objects>
-                <viewController id="9TK-rX-eKd" sceneMemberID="viewController">
+                <viewController id="9TK-rX-eKd" customClass="SignupViewController" customModule="CreateLoginStarter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gbs-o5-bdw"/>
                         <viewControllerLayoutGuide type="bottom" id="OSx-PQ-dHg"/>
@@ -250,7 +250,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sjx-UX-Gjb">
                                         <rect key="frame" x="8" y="271" width="327" height="21"/>
@@ -273,6 +273,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKi-wX-kl2">
                                         <rect key="frame" x="8" y="338" width="327" height="30"/>
                                         <state key="normal" title="Create"/>
+                                        <connections>
+                                            <action selector="createAccount:" destination="9TK-rX-eKd" eventType="touchUpInside" id="tJQ-aA-4GQ"/>
+                                        </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5KL-bl-LeL">
                                         <rect key="frame" x="8" y="300" width="327" height="30"/>
@@ -281,7 +284,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                 </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -331,6 +334,12 @@
                             <constraint firstAttribute="trailingMargin" secondItem="mbs-xf-hhO" secondAttribute="trailing" id="hCu-Vz-gNl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmField" destination="5KL-bl-LeL" id="0va-1Z-b2R"/>
+                        <outlet property="emailField" destination="nNn-t3-mPU" id="bqR-XA-acp"/>
+                        <outlet property="passwordField" destination="5mw-uV-sbP" id="AG0-xd-qSp"/>
+                        <outlet property="usernameField" destination="b02-bo-sF6" id="vOg-dc-A3X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yij-Tt-KXC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+class APIInteractions{
+    class func authorizeUser(theURL: URL){
+        
+    }
+}

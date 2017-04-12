@@ -11,10 +11,12 @@ import Foundation
 class APIDetails {
     static let baseURL = "http://localhost:8080/json/"
     
-    static let apiCallCompletions:[APICalls:([String])->String] = [.allProducts:{(params) in "products/all"},
-                                                                   .deleteAProduct:{(params) in "products/delete/\(params[0])"},
-                                                                   .addProduct:{(params) in "products/add"},
-                                                                   .resetAPI:{(params) in "/products/reset"}]
+    static let apiCallCompletions:[APICalls:([String])->String] = [.allUsers:{(params) in "all"},
+                                                                   .userInfo:{(params) in "username/\(params[0])"},
+                                                                   .authenticateUser:{(params) in "login/\(params[0])/\(params[1])"},
+                                                                   .addUser:{(params) in "add"},
+                                                                   .updateUser:{(params) in "\(params[0])"},
+                                                                   .deleteUser:{(params) in "add"}]
     
     class func buildUrl(callType:APICalls, params:[String])->URL {
         return URL(string: baseURL+apiCallCompletions[callType]!(params))!

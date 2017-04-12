@@ -11,10 +11,12 @@ import Foundation
 import Foundation
 
 enum APICalls: Int {
-    case allProducts = 0
-    case deleteAProduct = 1
-    case addProduct = 2
-    case resetAPI = 3
+    case allUsers = 0
+    case userInfo = 1
+    case authenticateUser = 2
+    case addUser = 3
+    case updateUser = 4
+    case deleteUser = 5
     
     var theIndex:Int {
         get {

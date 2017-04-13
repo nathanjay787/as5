@@ -19,6 +19,8 @@ class APIDetails {
                                                                    .deleteUser:{(params) in "add"}]
     
     class func buildUrl(callType:APICalls, params:[String])->URL {
-        return URL(string: baseURL+apiCallCompletions[callType]!(params))!
+        let urlString = baseURL+apiCallCompletions[callType]!(params)
+        let toReturn = URL(string: urlString)!
+        return toReturn//URL(string: baseURL+apiCallCompletions[callType]!(params))!
     }
 }

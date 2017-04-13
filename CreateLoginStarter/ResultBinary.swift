@@ -1,0 +1,13 @@
+//
+//  ResultBinary.swift
+//  CreateLoginStarter
+//
+//  Created by Jasiukajc, Nathan on 2017-04-13.
+//  Copyright © 2017 Chris. All rights reserved.
+//
+
+import Foundation
+
+struct ResultBinary {
+    let result: Bool
+}

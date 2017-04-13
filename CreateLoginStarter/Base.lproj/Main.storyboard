@@ -78,7 +78,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chz-2W-chE">
                                         <rect key="frame" x="152" y="204" width="38" height="30"/>
@@ -87,7 +87,8 @@
                                         </constraints>
                                         <state key="normal" title="Login"/>
                                         <connections>
-                                            <segue destination="sJy-gd-I99" kind="show" id="rY4-NS-Tbq"/>
+                                            <action selector="tryLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zdQ-jH-QR0"/>
+                                            <segue destination="sJy-gd-I99" kind="show" identifier="goToMain" id="rY4-NS-Tbq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -117,7 +118,7 @@
                                 <rect key="frame" x="16" y="617" width="343" height="30"/>
                                 <state key="normal" title="Create An Account"/>
                                 <connections>
-                                    <segue destination="9TK-rX-eKd" kind="show" id="xSS-F7-htX"/>
+                                    <segue destination="9TK-rX-eKd" kind="show" identifier="goToSignup" id="xSS-F7-htX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -135,15 +136,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FSy-MB-YVB"/>
+                    <connections>
+                        <outlet property="passwordField" destination="Jge-ax-4O0" id="a4Y-7p-KHj"/>
+                        <outlet property="userNameField" destination="Pw3-5T-0Ub" id="T5Z-6J-6KD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="856.79999999999995" y="-546.47676161919048"/>
         </scene>
-        <!--View Controller-->
+        <!--Main Screen View Controller-->
         <scene sceneID="zOL-gU-ytE">
             <objects>
-                <viewController id="sJy-gd-I99" sceneMemberID="viewController">
+                <viewController id="sJy-gd-I99" customClass="MainScreenViewController" customModule="CreateLoginStarter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2GY-Yy-2m0"/>
                         <viewControllerLayoutGuide type="bottom" id="Ra2-2M-pqq"/>

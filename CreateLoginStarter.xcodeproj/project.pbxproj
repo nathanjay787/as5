@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		64299B691E9FD1B4004B9109 /* ResultBinary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64299B681E9FD1B4004B9109 /* ResultBinary.swift */; };
 		64299B6B1E9FD93B004B9109 /* MainScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64299B6A1E9FD93B004B9109 /* MainScreenViewController.swift */; };
 		64E4B6311E9EC123003254DD /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E4B6301E9EC123003254DD /* SignupViewController.swift */; };
 		64E4B6331E9ED66C003254DD /* APICalls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E4B6321E9ED66C003254DD /* APICalls.swift */; };
@@ -40,7 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		64299B681E9FD1B4004B9109 /* ResultBinary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultBinary.swift; sourceTree = "<group>"; };
 		64299B6A1E9FD93B004B9109 /* MainScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainScreenViewController.swift; sourceTree = "<group>"; };
 		64E4B6301E9EC123003254DD /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		64E4B6321E9ED66C003254DD /* APICalls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICalls.swift; sourceTree = "<group>"; };
@@ -119,7 +117,6 @@
 				64E4B6321E9ED66C003254DD /* APICalls.swift */,
 				64E4B6341E9EDD5B003254DD /* APIDetails.swift */,
 				64E4B6361E9EDD71003254DD /* APIInteractions.swift */,
-				64299B681E9FD1B4004B9109 /* ResultBinary.swift */,
 				64299B6A1E9FD93B004B9109 /* MainScreenViewController.swift */,
 			);
 			path = CreateLoginStarter;
@@ -281,7 +278,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				64E4B6351E9EDD5B003254DD /* APIDetails.swift in Sources */,
-				64299B691E9FD1B4004B9109 /* ResultBinary.swift in Sources */,
 				64E4B6371E9EDD71003254DD /* APIInteractions.swift in Sources */,
 				64E4B6311E9EC123003254DD /* SignupViewController.swift in Sources */,
 				83B0C0E31E8C895100BA0F37 /* ViewController.swift in Sources */,

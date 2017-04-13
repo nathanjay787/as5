@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "ViewController.(tryLogin(Any) -&gt; ()).(closure #1).(closure #1):ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.(tryLogin(Any) -&gt; ()).(closure #1):ViewController.swift">
+      </ContextState>
+      <ContextState
+         contextName = "ViewController.viewWillAppear(Bool) -&gt; ():ViewController.swift">
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

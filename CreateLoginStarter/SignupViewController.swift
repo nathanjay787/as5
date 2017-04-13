@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 class SignupViewController: UIViewController {
     
     let regexRepository = [
@@ -23,6 +24,7 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var confirmField: UITextField!
     
     let errorMsg = "The following field(s) are not in the correct format: "
+    let emptyMsg = "Do not leave the following field(s) blank: "
     
     var params = ["userName": ["display": "Username", "value": "", "status": false],
                   "email": ["display": "Email", "value": "", "status": false],
@@ -30,7 +32,7 @@ class SignupViewController: UIViewController {
                   "passConfirm": ["display": "Confirm Password", "value": "", "status": false]
     ]
     
-    
+    var newUser: ViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +46,8 @@ class SignupViewController: UIViewController {
     
     @IBAction func createAccount(_ sender: Any) {
         var formGood = true
+        var noEmpties = true
+        
         params["userName"]!["value"] = usernameField.text!
         params["email"]!["value"] = emailField.text!
         params["passWord"]!["value"] = passwordField.text!
@@ -55,8 +59,9 @@ class SignupViewController: UIViewController {
         params["passConfirm"]!["status"] = (params["passWord"]!["value"] as! String == params["passConfirm"]!["value"] as! String ? true : false)
         
         var errorToAdd = ""
+        var emptiesToAdd = ""
         
-        for (field, data) in params {
+        for (_, data) in params {
             if (data["status"] as! Bool == false){
                 formGood = false
                 if (errorToAdd != ""){
@@ -64,12 +69,37 @@ class SignupViewController: UIViewController {
                 }
                 errorToAdd += data["display"] as! String
             }
+            if (data["value"] as! String == ""){
+                noEmpties = false
+                formGood = false
+                if (emptiesToAdd != ""){
+                    emptiesToAdd += ", "
+                }
+                emptiesToAdd += data["display"] as! String
+            }
         }
         
         let finalError = errorMsg + errorToAdd
+        let finalEmpty = emptyMsg + emptiesToAdd
         
         if (formGood){
             accessAPI()
+        }
+        else if (!noEmpties){
+            let createAlert = UIAlertController(title: "Error", message: finalEmpty, preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            createAlert.addAction(okAction)
+            
+            present(createAlert, animated: true, completion: nil)
+        }
+        else if (params["passConfirm"]!["status"] as! Bool == false){
+            let createAlert = UIAlertController(title: "Error", message: "Passwords do not match", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+            
+            createAlert.addAction(okAction)
+            
+            present(createAlert, animated: true, completion: nil)
         }
         else {
             let createAlert = UIAlertController(title: "Error", message: finalError, preferredStyle: .alert)
@@ -99,6 +129,30 @@ extension SignupViewController {
 
 extension SignupViewController {
     func accessAPI() {
-        
+        let user = params["userName"]!["value"] as! String
+        let pass = params["passWord"]!["value"] as! String
+        let email = params["email"]!["value"] as! String
+        APIInteractions.addAccount(
+                                passWord: pass, userName: user, email: email,
+                                theURL: APIDetails.buildUrl(callType: .addUser, params: []),
+                                onCompletion: { (theResult: [String:Any]?) -> () in
+                                    var resultStatus = ""
+                                    DispatchQueue.main.async(execute: { () -> Void in
+                                        resultStatus = theResult!["result"] as! String
+                                        
+                                        if (resultStatus == "true"){
+                                            self.newUser.created = true
+                                            if let navController = self.navigationController {
+                                                navController.popViewController(animated: true)
+                                            }
+                                        }
+                                        else {
+                                            let createAlert = UIAlertController(title: "Error", message: "Could not create user account", preferredStyle: .alert)
+                                            let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+                                            createAlert.addAction(okAction)
+                                            self.present(createAlert, animated: true, completion: nil)
+                                        }
+                                    })
+        })
     }
 }

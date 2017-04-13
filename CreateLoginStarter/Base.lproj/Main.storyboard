@@ -69,7 +69,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jge-ax-4O0">
                                         <rect key="frame" x="8" y="166" width="327" height="30"/>
@@ -88,7 +88,6 @@
                                         <state key="normal" title="Login"/>
                                         <connections>
                                             <action selector="tryLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zdQ-jH-QR0"/>
-                                            <segue destination="sJy-gd-I99" kind="show" identifier="goToMain" id="rY4-NS-Tbq"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -118,7 +117,7 @@
                                 <rect key="frame" x="16" y="617" width="343" height="30"/>
                                 <state key="normal" title="Create An Account"/>
                                 <connections>
-                                    <segue destination="9TK-rX-eKd" kind="show" identifier="goToSignup" id="xSS-F7-htX"/>
+                                    <action selector="makeAccount:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HU5-OI-0Ar"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -139,6 +138,8 @@
                     <connections>
                         <outlet property="passwordField" destination="Jge-ax-4O0" id="a4Y-7p-KHj"/>
                         <outlet property="userNameField" destination="Pw3-5T-0Ub" id="T5Z-6J-6KD"/>
+                        <segue destination="9TK-rX-eKd" kind="show" identifier="goToSignup" id="MWa-IL-EZS"/>
+                        <segue destination="sJy-gd-I99" kind="show" identifier="goToMain" id="nHI-fO-PxQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -228,7 +229,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bu2-tL-hf0">
                                         <rect key="frame" x="8" y="137" width="327" height="21"/>
@@ -246,7 +247,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5mw-uV-sbP">
                                         <rect key="frame" x="8" y="233" width="327" height="30"/>
